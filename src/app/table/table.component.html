@@ -1,0 +1,22 @@
+<div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+    <th>Id</th>  
+    <th>FirstName</th>  
+    <th>Gender</th> 
+    <th>Date</th> 
+    <th></th>
+            </tr>  
+</thead>  
+<tbody>  
+<tr *ngFor="let item of dataContent.users; index as i" [class.change]="color && currentRow === i+1"> 
+<td>{{ item.id }}</td> 
+<td>{{ item.firstName }}</td>  
+<td>{{ item.gender }}</td>
+<td>{{ item.birthDate | date:'dd-MM-yyyy'}}</td>  
+<td><button class="btn btn-primary " (click)="edit(item.id)">Edit</button></td>
+</tr>
+</tbody>
+</table>
+</div>
